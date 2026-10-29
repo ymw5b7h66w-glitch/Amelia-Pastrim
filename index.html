@@ -1,148 +1,311 @@
+
 <!doctype html>
 <html lang="sq">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0b0b">
-  <meta name="description" content="AmeliaPastrim — shërbime profesionale pastrimi për shtëpi, apartamente dhe ambiente biznesi. Kërko një ofertë të personalizuar.">
-  <title>AmeliaPastrim | Shërbime Profesionale Pastrimi</title>
-  <style>
-    :root{--ink:#0b0b0b;--paper:#f7f5ef;--white:#fff;--muted:#b9b9b9;--line:#292929;--accent:#c8a96b;--gold:#c8a96b;--gold-light:#e7d4a5;--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--ink);color:var(--white);line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .nav{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,169,107,.35)}
-    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em;font-size:1.15rem}
-    .brand-mark{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:19px;color:var(--gold-light);box-shadow:0 0 18px rgba(200,169,107,.10)}
-    .brand small{display:block;font-size:.58rem;letter-spacing:.18em;color:#aaa;font-weight:500}
-    .navlinks{display:flex;align-items:center;gap:25px;font-size:.88rem;color:#ddd}
-    .navlinks a:hover{color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:999px;background:linear-gradient(135deg,#e7d4a5,#c8a96b);color:#111;font-weight:700;border:1px solid var(--gold);transition:.2s;cursor:pointer;box-shadow:0 5px 18px rgba(200,169,107,.12)}
-    .btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#f0e2bd,#d6b777);box-shadow:0 8px 24px rgba(200,169,107,.22)}.btn-outline{background:transparent;color:#fff;border-color:var(--gold)}.btn-outline:hover{background:var(--gold);color:#111}
-    .menu-btn{display:none;background:none;border:1px solid #555;color:#fff;border-radius:50%;width:42px;height:42px;font-size:20px}
-    .hero{position:relative;isolation:isolate;overflow:hidden;min-height:620px;display:flex;align-items:center;border-bottom:1px solid #252525}
-    .hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.79) 44%,rgba(0,0,0,.22) 100%),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=85') center/cover}
-    .hero-content{max-width:690px;padding:92px 0}
-    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--gold-light);font-weight:700}
-    h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.98;letter-spacing:-.065em;margin:20px 0 24px;max-width:740px}
-    .hero p{color:#d1d1d1;max-width:540px;font-size:1.06rem}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:54px;color:#ddd;font-size:.84rem}
-    .trust span{display:flex;align-items:center;gap:9px}.trust b{font-size:1.15rem;color:var(--gold-light)}
-    section{padding:86px 0}.section-light{background:var(--paper);color:var(--ink)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}
-    h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.05;letter-spacing:-.055em;margin:10px 0 0}
-    .section-head p{max-width:430px;color:#666;margin:0}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .service{border:1px solid #e1d7c2;padding:27px;border-radius:18px;min-height:225px;background:linear-gradient(145deg,#fff 0%,#fbf8f0 100%);transition:transform .2s,border-color .2s,box-shadow .2s}.service:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 28px rgba(70,53,20,.08)}
-    .service .num{font-size:.78rem;color:#9b7a3f;letter-spacing:.15em}.service .symbol{font-size:1.8rem;margin:22px 0 8px}.service h3{margin:0 0 8px;font-size:1.13rem}.service p{margin:0;color:#666;font-size:.92rem}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .about-photo{min-height:440px;border-radius:20px;background:linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.05)),url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85') center/cover}
-    .about-copy p{color:#c4c4c4}.feature-list{list-style:none;padding:0;margin:25px 0;display:grid;gap:13px}.feature-list li:before{content:"✓";display:inline-grid;place-items:center;border:1px solid var(--gold);color:var(--gold-light);border-radius:50%;width:23px;height:23px;margin-right:10px;font-size:.75rem}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.step{border-top:2px solid var(--gold);padding-top:20px}.step .n{font-size:.75rem;letter-spacing:.15em;color:#777}.step h3{margin:14px 0 8px}.step p{color:#666;margin:0}
-    .cta{background:linear-gradient(125deg,#f0e7d3,#d5bd8a);color:#111;padding:56px;border-radius:22px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta p{margin:10px 0 0;color:#4d4d4d}.cta .eyebrow{color:#79602f!important}
-    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}.contact-details{color:#c5c5c5}.contact-details p{margin:8px 0 18px}.contact-details strong{color:#fff}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;font-size:.82rem;color:#ddd}input,select,textarea{width:100%;border:1px solid #5c4b2c;border-radius:10px;background:#151515;color:#fff;padding:14px;font:inherit;accent-color:var(--gold)}input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:2px}textarea{min-height:125px;resize:vertical}.full{grid-column:1/-1}
-    .notice{font-size:.8rem;color:#aaa;margin:10px 0 0}.footer{border-top:1px solid #242424;padding:28px 0;color:#aaa;font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#101010;border-bottom:1px solid #333;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks .btn{width:100%}.menu-btn{display:block}.nav-inner>.btn{display:none}.hero{min-height:600px}.hero:before{background:linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85') center/cover}.trust{gap:18px}.section-head{display:block}.section-head p{margin-top:18px}.service-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.about-photo{min-height:330px}.steps{grid-template-columns:1fr}.cta{padding:32px;display:block}.cta .btn{margin-top:20px}}
-    @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.hero-content{padding:70px 0}.service-grid{grid-template-columns:1fr}.service{min-height:auto}.trust{display:grid;grid-template-columns:1fr 1fr}.trust span:last-child{grid-column:1/-1}section{padding:65px 0}form{grid-template-columns:1fr}.full{grid-column:auto}.brand{font-size:1rem}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="description" content="AmeliaPastrim — shërbime profesionale pastrimi për shtëpi, apartamente dhe ambiente biznesi.">
+<title>AmeliaPastrim | Shërbime Profesionale Pastrimi</title>
+
+<style>
+:root{--ink:#0b0b0b;--paper:#f7f5ef;--white:#fff;--gold:#c8a96b;--gold-light:#e7d4a5;--max:1160px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--ink);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,169,107,.35)}
+.nav-inner{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:-.04em;font-size:1.15rem}
+.brand img{width:85px;height:85px;object-fit:contain;border-radius:0;flex-shrink:0;display:block}
+.brand small{display:block;font-size:.58rem;letter-spacing:.18em;color:#aaa;font-weight:500}
+
+.navlinks{display:flex;align-items:center;gap:25px;font-size:.88rem;color:#ddd}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:999px;background:linear-gradient(135deg,#e7d4a5,#c8a96b);color:#111;font-weight:700;border:1px solid var(--gold);transition:.2s;cursor:pointer;box-shadow:0 5px 18px rgba(200,169,107,.12)}
+.btn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#f0e2bd,#d6b777)}
+.btn-outline{background:transparent;color:#fff;border-color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:#111}
+.menu-btn{display:none;background:none;border:1px solid #555;color:#fff;border-radius:50%;width:42px;height:42px;font-size:20px}
+
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:620px;display:flex;align-items:center;border-bottom:1px solid #252525}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.79) 44%,rgba(0,0,0,.22)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{max-width:690px;padding:92px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--gold-light);font-weight:700}
+h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.98;letter-spacing:-.065em;margin:20px 0 24px;max-width:740px}
+.hero p{color:#d1d1d1;max-width:540px;font-size:1.06rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:54px;color:#ddd;font-size:.84rem}
+.trust span{display:flex;align-items:center;gap:9px}
+.trust b{font-size:1.15rem;color:var(--gold-light)}
+
+section{padding:86px 0}
+.section-light{background:var(--paper);color:var(--ink)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}
+h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.05;letter-spacing:-.055em;margin:10px 0 0}
+.section-head p{max-width:430px;color:#666;margin:0}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.service{border:1px solid #e1d7c2;padding:27px;border-radius:18px;min-height:225px;background:linear-gradient(145deg,#fff,#fbf8f0);transition:.2s}
+.service:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 28px rgba(70,53,20,.08)}
+.service .num{font-size:.78rem;color:#9b7a3f;letter-spacing:.15em}
+.service .symbol{font-size:1.8rem;margin:22px 0 8px}
+.service h3{margin:0 0 8px;font-size:1.13rem}
+.service p{margin:0;color:#666;font-size:.92rem}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-photo{min-height:440px;border-radius:20px;background:linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.05)),url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85') center/cover}
+.about-copy p{color:#c4c4c4}
+.feature-list{list-style:none;padding:0;margin:25px 0;display:grid;gap:13px}
+.feature-list li:before{content:"✓";display:inline-grid;place-items:center;border:1px solid var(--gold);color:var(--gold-light);border-radius:50%;width:23px;height:23px;margin-right:10px;font-size:.75rem}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.step{border-top:2px solid var(--gold);padding-top:20px}
+.step .n{font-size:.75rem;letter-spacing:.15em;color:#777}
+.step h3{margin:14px 0 8px}
+.step p{color:#666;margin:0}
+
+.cta{background:linear-gradient(125deg,#f0e7d3,#d5bd8a);color:#111;padding:56px;border-radius:22px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.cta p{margin:10px 0 0;color:#4d4d4d}
+.cta .eyebrow{color:#79602f!important}
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
+.contact-details{color:#c5c5c5}
+.contact-details p{margin:8px 0 18px}
+.contact-details strong{color:#fff}
+.contact-link{color:var(--gold-light);font-weight:700}
+.contact-link:hover{text-decoration:underline}
+
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:7px;font-size:.82rem;color:#ddd}
+input,select,textarea{width:100%;border:1px solid #5c4b2c;border-radius:10px;background:#151515;color:#fff;padding:14px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:2px}
+textarea{min-height:125px;resize:vertical}
+.full{grid-column:1/-1}
+.notice{font-size:.8rem;color:#aaa;margin:10px 0 0}
+
+.footer{border-top:1px solid #242424;padding:28px 0;color:#aaa;font-size:.82rem}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media(max-width:800px){
+.nav-inner{min-height:80px}
+.navlinks{display:none;position:absolute;top:80px;left:0;right:0;padding:20px;background:#101010;border-bottom:1px solid #333;flex-direction:column;align-items:stretch}
+.navlinks.open{display:flex}
+.navlinks .btn{width:100%}
+.menu-btn{display:block}
+.nav-inner>.btn{display:none}
+.hero{min-height:600px}
+.hero:before{background:linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85') center/cover}
+.trust{gap:18px}
+.section-head{display:block}
+.section-head p{margin-top:18px}
+.service-grid{grid-template-columns:1fr 1fr}
+.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+.about-photo{min-height:330px}
+.steps{grid-template-columns:1fr}
+.cta{padding:32px;display:block}
+.cta .btn{margin-top:20px}
+}
+
+@media(max-width:480px){
+.wrap{width:min(var(--max),calc(100% - 28px))}
+.brand{font-size:1rem;gap:9px}
+.brand img{width:70px;height:70px}
+.hero-content{padding:70px 0}
+.service-grid{grid-template-columns:1fr}
+.service{min-height:auto}
+.trust{display:grid;grid-template-columns:1fr 1fr}
+.trust span:last-child{grid-column:1/-1}
+section{padding:65px 0}
+form{grid-template-columns:1fr}
+.full{grid-column:auto}
+}
+</style>
 </head>
+
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#kreu" aria-label="AmeliaPastrim, kreu"><span class="brand-mark">⌂</span><span>AmeliaPastrim.com<small>PASTËRTI NË ÇDO DETAJ</small></span></a>
-      <nav class="navlinks" id="navlinks">
-        <a href="#kreu">Kreu</a><a href="#sherbimet">Shërbimet</a><a href="#rreth-nesh">Rreth nesh</a><a href="#procesi">Si funksionon</a><a href="#kontakti">Kontakti</a>
-        <a class="btn" href="#kontakti">Kërko ofertë ↗</a>
-      </nav>
-      <a class="btn" href="#kontakti">Kërko ofertë ↗</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Hap menunë" aria-expanded="false">☰</button>
-    </div>
-  </header>
+<header class="nav">
+<div class="wrap nav-inner">
+<a class="brand" href="#kreu" aria-label="AmeliaPastrim, kreu">
+<img src="logo.png" alt="Logo AmeliaPastrim">
+<span>AmeliaPastrim.com<small>PASTËRTI NË ÇDO DETAJ</small></span>
+</a>
 
-  <main>
-    <section class="hero" id="kreu">
-      <div class="wrap"><div class="hero-content">
-        <div class="eyebrow">Shërbime profesionale pastrimi</div>
-        <h1>Shtëpia juaj.<br>Prioriteti ynë.</h1>
-        <p>Ambiente të pastra, të freskëta dhe mikpritëse. AmeliaPastrim ofron zgjidhje pastrimi për shtëpi, apartamente dhe hapësira biznesi, me kujdes në çdo detaj.</p>
-        <div class="actions"><a class="btn" href="#kontakti">Kërko një ofertë <span>→</span></a><a class="btn btn-outline" href="#sherbimet">Shiko shërbimet</a></div>
-        <div class="trust"><span><b>✧</b> Kujdes në çdo detaj</span><span><b>◇</b> Cilësi dhe korrektësi</span><span><b>◷</b> Orar fleksibël</span></div>
-      </div></div>
-    </section>
+<nav class="navlinks" id="navlinks">
+<a href="#kreu">Kreu</a>
+<a href="#sherbimet">Shërbimet</a>
+<a href="#rreth-nesh">Rreth nesh</a>
+<a href="#procesi">Si funksionon</a>
+<a href="#kontakti">Kontakti</a>
+<a class="btn" href="#kontakti">Kërko ofertë ↗</a>
+</nav>
 
-    <section class="section-light" id="sherbimet">
-      <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">Shërbimet tona</div><h2>Pastërti që<br>ndihet.</h2></div><p>Na tregoni çfarë hapësire dëshironi të pastroni. Ne do t’ju ndihmojmë të gjeni shërbimin e duhur sipas nevojave tuaja.</p></div>
-        <div class="service-grid">
-          <article class="service"><div class="num">01 / SHTËPI</div><div class="symbol">⌂</div><h3>Pastrimi i shtëpive</h3><p>Pastrimi i ambienteve të përditshme, me vëmendje te sipërfaqet dhe detajet.</p></article>
-          <article class="service"><div class="num">02 / APARTAMENTE</div><div class="symbol">▤</div><h3>Pastrimi i apartamenteve</h3><p>Zgjidhje për apartamente të vogla ose të mëdha, sipas kërkesës suaj.</p></article>
-          <article class="service"><div class="num">03 / BIZNESE</div><div class="symbol">▣</div><h3>Pastrimi i zyrave</h3><p>Mbani hapësirën e punës të rregullt, të pastër dhe gati për ditën e re.</p></article>
-          <article class="service"><div class="num">04 / THELLË</div><div class="symbol">✧</div><h3>Pastrimi i thellë</h3><p>Pastrim më i detajuar për ambiente që kanë nevojë për kujdes shtesë.</p></article>
-          <article class="service"><div class="num">05 / PAS RIKONSTRUKSIONIT</div><div class="symbol">⌁</div><h3>Pas punimeve</h3><p>Na kontaktoni për të diskutuar pastrimin pas rinovimit ose punimeve.</p></article>
-          <article class="service"><div class="num">06 / SIPAS KËRKESËS</div><div class="symbol">＋</div><h3>Shërbime të personalizuara</h3><p>Na tregoni çfarë ju duhet dhe do të shqyrtojmë një zgjidhje të përshtatshme.</p></article>
-        </div>
-      </div>
-    </section>
+<a class="btn" href="#kontakti">Kërko ofertë ↗</a>
+<button class="menu-btn" id="menuBtn" aria-label="Hap menunë" aria-expanded="false">☰</button>
+</div>
+</header>
 
-    <section id="rreth-nesh">
-      <div class="wrap about-grid">
-        <div class="about-photo" role="img" aria-label="Pajisje dhe mjete pastrimi në një ambient të pastër"></div>
-        <div class="about-copy"><div class="eyebrow">Rreth AmeliaPastrim</div><h2>Hapësira të pastra.<br>Mendje e qetë.</h2>
-          <p>Besojmë se pastërtia është më shumë se pamja: është rehati, kujdes dhe ndjesia e mirë kur hyn në një ambient të rregullt.</p>
-          <p>Na tregoni për hapësirën, shërbimin dhe kohën që ju përshtatet. Ne do t’ju kontaktojmë për të diskutuar detajet dhe ofertën.</p>
-          <ul class="feature-list"><li>Kujdes ndaj detajeve</li><li>Komunikim i qartë me klientin</li><li>Ofertë sipas nevojave të hapësirës</li></ul>
-          <a class="btn" href="#kontakti">Flisni me ne →</a>
-        </div>
-      </div>
-    </section>
+<main>
+<section class="hero" id="kreu">
+<div class="wrap"><div class="hero-content">
+<div class="eyebrow">Shërbime profesionale pastrimi</div>
+<h1>Shtëpia juaj.<br>Prioriteti ynë.</h1>
+<p>Ambiente të pastra, të freskëta dhe mikpritëse. AmeliaPastrim ofron zgjidhje pastrimi për shtëpi, apartamente dhe hapësira biznesi, me kujdes në çdo detaj.</p>
+<div class="actions">
+<a class="btn" href="#kontakti">Kërko një ofertë →</a>
+<a class="btn btn-outline" href="#sherbimet">Shiko shërbimet</a>
+</div>
+<div class="trust">
+<span><b>✧</b> Kujdes në çdo detaj</span>
+<span><b>◇</b> Cilësi dhe korrektësi</span>
+<span><b>◷</b> Orar fleksibël</span>
+</div>
+</div></div>
+</section>
 
-    <section class="section-light" id="procesi">
-      <div class="wrap"><div class="section-head"><div><div class="eyebrow">E thjeshtë dhe e qartë</div><h2>Si funksionon?</h2></div><p>Tre hapa për të nisur kërkesën tuaj për pastrim.</p></div>
-        <div class="steps"><article class="step"><div class="n">HAPI 01</div><h3>Na kontaktoni</h3><p>Plotësoni formularin me llojin e ambientit dhe shërbimin që ju duhet.</p></article><article class="step"><div class="n">HAPI 02</div><h3>Marrim detajet</h3><p>Diskutojmë sipërfaqen, kërkesat dhe kohën e përshtatshme.</p></article><article class="step"><div class="n">HAPI 03</div><h3>Merrni ofertën</h3><p>Ju kontaktojmë për të rënë dakord për shërbimin dhe çmimin.</p></article></div>
-        <div class="cta" style="margin-top:55px"><div><div class="eyebrow" style="color:#555">Gati për të nisur?</div><h2>Le ta bëjmë hapësirën tuaj të shkëlqejë.</h2><p>Kërkoni një ofertë të personalizuar për ambientin tuaj.</p></div><a class="btn" href="#kontakti">Kërko ofertë ↗</a></div>
-      </div>
-    </section>
+<section class="section-light" id="sherbimet">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">Shërbimet tona</div><h2>Pastërti që<br>ndihet.</h2></div>
+<p>Na tregoni çfarë hapësire dëshironi të pastroni. Ne do t’ju ndihmojmë të gjeni shërbimin e duhur sipas nevojave tuaja.</p>
+</div>
+<div class="service-grid">
+<article class="service"><div class="num">01 / SHTËPI</div><div class="symbol">⌂</div><h3>Pastrimi i shtëpive</h3><p>Pastrimi i ambienteve të përditshme, me vëmendje te sipërfaqet dhe detajet.</p></article>
+<article class="service"><div class="num">02 / APARTAMENTE</div><div class="symbol">▤</div><h3>Pastrimi i apartamenteve</h3><p>Zgjidhje për apartamente të vogla ose të mëdha, sipas kërkesës suaj.</p></article>
+<article class="service"><div class="num">03 / BIZNESE</div><div class="symbol">▣</div><h3>Pastrimi i zyrave</h3><p>Mbani hapësirën e punës të rregullt, të pastër dhe gati për ditën e re.</p></article>
+<article class="service"><div class="num">04 / THELLË</div><div class="symbol">✧</div><h3>Pastrimi i thellë</h3><p>Pastrim më i detajuar për ambiente që kanë nevojë për kujdes shtesë.</p></article>
+<article class="service"><div class="num">05 / PAS RIKONSTRUKSIONIT</div><div class="symbol">⌁</div><h3>Pas punimeve</h3><p>Na kontaktoni për të diskutuar pastrimin pas rinovimit ose punimeve.</p></article>
+<article class="service"><div class="num">06 / SIPAS KËRKESËS</div><div class="symbol">＋</div><h3>Shërbime të personalizuara</h3><p>Na tregoni çfarë ju duhet dhe do të shqyrtojmë një zgjidhje të përshtatshme.</p></article>
+</div>
+</div>
+</section>
 
-    <section id="kontakti">
-      <div class="wrap contact-grid">
-        <div><div class="eyebrow">Kontakti</div><h2>Na tregoni<br>çfarë ju duhet.</h2><p class="contact-details">Plotësoni formularin dhe përgatitni një kërkesë që të mund të flasim për shërbimin e duhur.</p>
-          <div class="contact-details"><p><strong>Email</strong><br>Vendosni email-in e biznesit</p><p><strong>Telefon / WhatsApp</strong><br>Vendosni numrin e kontaktit</p><p><strong>Zona e shërbimit</strong><br>Vendosni qytetin dhe zonat ku punoni</p></div>
-        </div>
-        <div><form id="quoteForm">
-          <label>Emri juaj<input name="name" autocomplete="name" required placeholder="Emri dhe mbiemri"></label>
-          <label>Telefoni<input name="phone" autocomplete="tel" required placeholder="+355 ..."></label>
-          <label>Lloji i ambientit<select name="space"><option>Shtëpi</option><option>Apartament</option><option>Zyrë / biznes</option><option>Pas punimeve</option><option>Tjetër</option></select></label>
-          <label>Shërbimi<select name="service"><option>Pastrimi i zakonshëm</option><option>Pastrimi i thellë</option><option>Pastrimi i zyrave</option><option>Shërbim i personalizuar</option></select></label>
-          <label class="full">Detaje shtesë<textarea name="details" placeholder="Qyteti, sipërfaqja, data e dëshiruar dhe kërkesa të tjera..."></textarea></label>
-          <button class="btn full" type="submit">Përgatit kërkesën →</button>
-        </form><p class="notice" id="formNotice">Formulari do të hapë aplikacionin tuaj të email-it pasi të vendosni adresën e saktë të biznesit në kod.</p></div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> AmeliaPastrim.com · Të gjitha të drejtat e rezervuara.</span><span>Pastërti në çdo detaj.</span></div></footer>
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navlinks = document.getElementById('navlinks');
-    menuBtn.addEventListener('click', () => {
-      const open = navlinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.textContent = open ? '×' : '☰';
-    });
-    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navlinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
-    }));
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('quoteForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      // IMPORTANT: Replace this placeholder with the real business email before publishing.
-      const businessEmail = 'NDERR0_EMAILIN_KETU@example.com';
-      if (businessEmail.includes('NDERR0_EMAILIN_KETU')) {
-        document.getElementById('formNotice').textContent = 'Formulari është gati, por pronari duhet të vendosë email-in real të biznesit në kod para se të marrë kërkesa.';
-        return;
-      }
-      const f = new FormData(e.target);
-      const body = `Emri: ${f.get('name')}%0D%0ATelefoni: ${f.get('phone')}%0D%0AAmbienti: ${f.get('space')}%0D%0AShërbimi: ${f.get('service')}%0D%0ADetaje: ${f.get('details')}`;
-      window.location.href = `mailto:${businessEmail}?subject=${encodeURIComponent('Kërkesë për ofertë - AmeliaPastrim')}&body=${body}`;
-    });
-  </script>
+<section id="rreth-nesh">
+<div class="wrap about-grid">
+<div class="about-photo" role="img" aria-label="Pajisje dhe mjete pastrimi në një ambient të pastër"></div>
+<div class="about-copy">
+<div class="eyebrow">Rreth AmeliaPastrim</div>
+<h2>Hapësira të pastra.<br>Mendje e qetë.</h2>
+<p>Besojmë se pastërtia është më shumë se pamja: është rehati, kujdes dhe ndjesia e mirë kur hyn në një ambient të rregullt.</p>
+<p>Na tregoni për hapësirën, shërbimin dhe kohën që ju përshtatet. Ne do t’ju kontaktojmë për të diskutuar detajet dhe ofertën.</p>
+<ul class="feature-list">
+<li>Kujdes ndaj detajeve</li>
+<li>Komunikim i qartë me klientin</li>
+<li>Ofertë sipas nevojave të hapësirës</li>
+</ul>
+<a class="btn" href="#kontakti">Flisni me ne →</a>
+</div>
+</div>
+</section>
+
+<section class="section-light" id="procesi">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">E thjeshtë dhe e qartë</div><h2>Si funksionon?</h2></div>
+<p>Tre hapa për të nisur kërkesën tuaj për pastrim.</p>
+</div>
+<div class="steps">
+<article class="step"><div class="n">HAPI 01</div><h3>Na kontaktoni</h3><p>Plotësoni formularin me llojin e ambientit dhe shërbimin që ju duhet.</p></article>
+<article class="step"><div class="n">HAPI 02</div><h3>Marrim detajet</h3><p>Diskutojmë sipërfaqen, kërkesat dhe kohën e përshtatshme.</p></article>
+<article class="step"><div class="n">HAPI 03</div><h3>Merrni ofertën</h3><p>Ju kontaktojmë për të rënë dakord për shërbimin dhe çmimin.</p></article>
+</div>
+<div class="cta" style="margin-top:55px">
+<div>
+<div class="eyebrow">Gati për të nisur?</div>
+<h2>Le ta bëjmë hapësirën tuaj të shkëlqejë.</h2>
+<p>Kërkoni një ofertë të personalizuar për ambientin tuaj.</p>
+</div>
+<a class="btn" href="#kontakti">Kërko ofertë ↗</a>
+</div>
+</div>
+</section>
+
+<section id="kontakti">
+<div class="wrap contact-grid">
+<div>
+<div class="eyebrow">Kontakti</div>
+<h2>Na tregoni<br>çfarë ju duhet.</h2>
+<p class="contact-details">Plotësoni formularin dhe na dërgoni kërkesën tuaj në WhatsApp.</p>
+<div class="contact-details">
+<p><strong>Telefon</strong><br><a class="contact-link" href="tel:+355692062033">+355 69 206 2033</a></p>
+<p><strong>WhatsApp</strong><br><a class="contact-link" href="https://wa.me/355692062033" target="_blank" rel="noopener">Na shkruani në WhatsApp ↗</a></p>
+</div>
+</div>
+
+<div>
+<form id="quoteForm">
+<label>Emri juaj<input name="name" autocomplete="name" required placeholder="Emri dhe mbiemri"></label>
+<label>Telefoni<input name="phone" autocomplete="tel" required placeholder="+355 ..."></label>
+<label>Lloji i ambientit
+<select name="space">
+<option>Shtëpi</option>
+<option>Apartament</option>
+<option>Zyrë / biznes</option>
+<option>Pas punimeve</option>
+<option>Tjetër</option>
+</select>
+</label>
+<label>Shërbimi
+<select name="service">
+<option>Pastrimi i zakonshëm</option>
+<option>Pastrimi i thellë</option>
+<option>Pastrimi i zyrave</option>
+<option>Shërbim i personalizuar</option>
+</select>
+</label>
+<label class="full">Detaje shtesë<textarea name="details" placeholder="Qyteti, sipërfaqja, data e dëshiruar dhe kërkesa të tjera..."></textarea></label>
+<button class="btn full" type="submit">Dërgo kërkesën në WhatsApp →</button>
+</form>
+<p class="notice" id="formNotice">WhatsApp do të hapet me kërkesën tuaj gati për dërgim.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap footer-inner">
+<span>© <span id="year"></span> AmeliaPastrim.com · Të gjitha të drejtat e rezervuara.</span>
+<span><a href="tel:+355692062033">+355 69 206 2033</a> · <a href="https://wa.me/355692062033" target="_blank" rel="noopener">WhatsApp</a></span>
+</div>
+</footer>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navlinks=document.getElementById('navlinks');
+
+menuBtn.addEventListener('click',()=>{
+const open=navlinks.classList.toggle('open');
+menuBtn.setAttribute('aria-expanded',String(open));
+menuBtn.textContent=open?'×':'☰';
+});
+
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+navlinks.classList.remove('open');
+menuBtn.setAttribute('aria-expanded','false');
+menuBtn.textContent='☰';
+}));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+e.preventDefault();
+const f=new FormData(e.target);
+
+const message=`Përshëndetje AmeliaPastrim! Dua të kërkoj një ofertë.
+
+Emri: ${f.get('name')}
+Telefoni: ${f.get('phone')}
+Lloji i ambientit: ${f.get('space')}
+Shërbimi: ${f.get('service')}
+Detaje shtesë: ${f.get('details')||'Nuk ka detaje shtesë.'}`;
+
+const whatsappURL='https://wa.me/355692062033?text='+encodeURIComponent(message);
+window.location.href=whatsappURL;
+
+document.getElementById('formNotice').textContent='WhatsApp po hapet me kërkesën tuaj gati për dërgim.';
+});
+</script>
 </body>
 </html>
