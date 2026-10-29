@@ -43,30 +43,27 @@ a { color:inherit;text-decoration:none; }
   justify-content:space-between;
   gap:20px;
 }
+
+/* LOGO E RREGULLUAR */
 .brand {
   display:flex;
   align-items:center;
-  gap:16px;
-  font-weight:800;
-  font-size:1.2rem;
-  letter-spacing:-.04em;
+  justify-content:flex-start;
+  width:180px;
+  height:76px;
+  overflow:hidden;
+  flex-shrink:0;
 }
 .brand img {
-  width:85px;
-  height:85px;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 52%;
   display:block;
   flex-shrink:0;
-  border-radius:0;
+  transform:scale(1.08);
 }
-.brand small {
-  display:block;
-  font-size:.65rem;
-  letter-spacing:.18em;
-  color:#aaa;
-  font-weight:500;
-  margin-top:5px;
-}
+
 .navlinks {
   display:flex;
   align-items:center;
@@ -317,8 +314,15 @@ textarea {
 }
 @media(max-width:800px) {
   .nav-inner { min-height:90px; }
-  .brand { font-size:1rem;gap:12px; }
-  .brand img { width:70px;height:70px; }
+
+  .brand {
+    width:145px;
+    height:68px;
+  }
+  .brand img {
+    transform:scale(1.08);
+  }
+
   .navlinks {
     display:none;
     position:absolute;
@@ -354,6 +358,13 @@ textarea {
 }
 @media(max-width:480px) {
   .wrap { width:calc(100% - 28px); }
+  .brand {
+    width:130px;
+    height:62px;
+  }
+  .brand img {
+    transform:scale(1.08);
+  }
   .hero-content { padding:70px 0; }
   .hero p { font-size:1rem; }
   .service-grid { grid-template-columns:1fr; }
@@ -371,10 +382,7 @@ textarea {
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#kreu">
-      <img src="logo.PNG" alt="Logo Amelia Pastrim">
-      <span>AmeliaPastrim.com
-        <small>PASTËRTI NË ÇDO DETAJ</small>
-      </span>
+      <img src="logo.PNG" alt="Amelia Pastrim">
     </a>
 
     <nav class="navlinks" id="navlinks">
@@ -431,35 +439,30 @@ textarea {
         <h3>Pastrimi i shtëpive</h3>
         <p>Pastrimi i ambienteve të përditshme, me vëmendje te sipërfaqet dhe detajet.</p>
       </article>
-
       <article class="service">
         <div class="num">02 / APARTAMENTE</div>
         <div class="symbol">▤</div>
         <h3>Pastrimi i apartamenteve</h3>
         <p>Zgjidhje për apartamente të vogla ose të mëdha, sipas kërkesës suaj.</p>
       </article>
-
       <article class="service">
         <div class="num">03 / BIZNESE</div>
         <div class="symbol">▣</div>
         <h3>Pastrimi i zyrave</h3>
         <p>Mbani hapësirën e punës të rregullt, të pastër dhe gati për ditën e re.</p>
       </article>
-
       <article class="service">
         <div class="num">04 / THELLË</div>
         <div class="symbol">✧</div>
         <h3>Pastrimi i thellë</h3>
         <p>Pastrim më i detajuar për ambiente që kanë nevojë për kujdes shtesë.</p>
       </article>
-
       <article class="service">
         <div class="num">05 / PAS RIKONSTRUKSIONIT</div>
         <div class="symbol">⌁</div>
         <h3>Pas punimeve</h3>
         <p>Na kontaktoni për të diskutuar pastrimin pas rinovimit ose punimeve.</p>
       </article>
-
       <article class="service">
         <div class="num">06 / SIPAS KËRKESËS</div>
         <div class="symbol">＋</div>
@@ -473,19 +476,16 @@ textarea {
 <section id="rreth-nesh">
   <div class="wrap about-grid">
     <div class="about-photo"></div>
-
     <div class="about-copy">
       <div class="eyebrow">Rreth AmeliaPastrim</div>
       <h2>Hapësira të pastra.<br>Mendje e qetë.</h2>
       <p>Besojmë se pastërtia është më shumë se pamja: është rehati, kujdes dhe ndjesia e mirë kur hyn në një ambient të rregullt.</p>
       <p>Na tregoni për hapësirën, shërbimin dhe kohën që ju përshtatet. Ne do t’ju kontaktojmë për të diskutuar detajet dhe ofertën.</p>
-
       <ul class="feature-list">
         <li>Kujdes ndaj detajeve</li>
         <li>Komunikim i qartë me klientin</li>
         <li>Ofertë sipas nevojave të hapësirës</li>
       </ul>
-
       <a class="btn" href="#kontakti">Flisni me ne →</a>
     </div>
   </div>
@@ -507,13 +507,11 @@ textarea {
         <h3>Na kontaktoni</h3>
         <p>Plotësoni formularin me llojin e ambientit dhe shërbimin që ju duhet.</p>
       </article>
-
       <article class="step">
         <div class="n">HAPI 02</div>
         <h3>Marrim detajet</h3>
         <p>Diskutojmë sipërfaqen, kërkesat dhe kohën e përshtatshme.</p>
       </article>
-
       <article class="step">
         <div class="n">HAPI 03</div>
         <h3>Merrni ofertën</h3>
@@ -538,15 +536,12 @@ textarea {
       <div class="eyebrow">Kontakti</div>
       <h2>Na tregoni<br>çfarë ju duhet.</h2>
       <p class="contact-details">Plotësoni formularin dhe na dërgoni kërkesën tuaj për shërbimin që ju nevojitet.</p>
-
       <div class="contact-details">
         <p><strong>Telefon</strong><br>
         <a href="tel:+355692062033">+355 69 206 2033</a></p>
-
         <p><strong>WhatsApp</strong><br>
         <a href="https://wa.me/355692062033" target="_blank">Na kontaktoni në WhatsApp</a></p>
       </div>
-
       <a class="btn" href="https://wa.me/355692062033" target="_blank">Hap WhatsApp →</a>
     </div>
 
@@ -555,11 +550,9 @@ textarea {
         <label>Emri juaj
           <input name="name" autocomplete="name" required placeholder="Emri dhe mbiemri">
         </label>
-
         <label>Telefoni
           <input name="phone" autocomplete="tel" required placeholder="+355 ...">
         </label>
-
         <label>Lloji i ambientit
           <select name="space">
             <option>Shtëpi</option>
@@ -569,7 +562,6 @@ textarea {
             <option>Tjetër</option>
           </select>
         </label>
-
         <label>Shërbimi
           <select name="service">
             <option>Pastrimi i zakonshëm</option>
@@ -578,14 +570,11 @@ textarea {
             <option>Shërbim i personalizuar</option>
           </select>
         </label>
-
         <label class="full">Detaje shtesë
           <textarea name="details" placeholder="Qyteti, sipërfaqja, data e dëshiruar dhe kërkesa të tjera..."></textarea>
         </label>
-
         <button class="btn full" type="submit">Dërgo kërkesën në WhatsApp →</button>
       </form>
-
       <p class="notice">Kërkesa juaj do të përgatitet dhe do të hapet në WhatsApp për t'u dërguar.</p>
     </div>
   </div>
@@ -622,7 +611,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 document.getElementById('quoteForm').addEventListener('submit', function(e) {
   e.preventDefault();
-
   const form = new FormData(e.target);
 
   const message =
